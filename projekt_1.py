@@ -1,8 +1,8 @@
 """
 projekt_1.py: první projekt do Engeto Online Python Akademie
 author: Michal Krejčí
-email: don.night@post.com
-discord:
+email: don.night@post.cz
+discord: donnight
 """
 
 uzivatele_hesla = {
@@ -18,13 +18,13 @@ jmeno = input("username: ")
 heslo = input("password: ")
 
 if uzivatele_hesla[jmeno] == heslo:
-  print("-"*40,
+  print("-" * 40,
         "\nWelcome to the app,", jmeno,
         "\nWe have 3 texts to be analyzed."
         )
-  print("-"*40)
+  print("-" * 40)
   cislo_textu = input("Enter a number btw. 1 and 3 to select: ")
-  print("-"*40)
+  print("-" * 40)
 
   if cislo_textu.isdigit() and 1 <= int(cislo_textu) <= 3:
     vybrany_text = texts[int(cislo_textu) - 1].split()
@@ -35,7 +35,7 @@ if uzivatele_hesla[jmeno] == heslo:
     pocet_cisel = [slovo for slovo in vybrany_text if slovo.isdigit()]
     print("There are", len(pocet_cisel) , "numeric strings.")
     print("The sum of all the numbers", sum(int(cislo) for cislo in pocet_cisel))
-    print("-"*40)
+    print("-" * 40)
 
     pocty_pismen = {}
     for slovo in vybrany_text:
@@ -48,7 +48,7 @@ if uzivatele_hesla[jmeno] == heslo:
 
     sirka_sloupce = max(pocty_pismen.values()) + 2
     print(f"LEN|{'OCCURENCES':^{sirka_sloupce}}|NR.")
-    print("-"*40)
+    print("-" * 40)
 
     for klic, hodnota in sorted(pocty_pismen.items()):
       hvezdy = "*" * hodnota
